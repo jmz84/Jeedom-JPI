@@ -29,7 +29,7 @@ class JPI extends eqLogic
         $url     = 'http://' . $ip . ':' . $port . '/?action=getVoices';
         $content = file_get_contents($url);
         $value   = explode(', ', $content);
-        log::add('JPI', 'debug', 'Langue(s) découverte(s) : ' . $content);
+        log::add('JPI', 'info', 'Langue(s) découverte(s) : ' . $content);
         return $value;
     }
     
@@ -305,7 +305,8 @@ class JPICmd extends cmd
                 $request_http->exec(10);
                 break;
             
-            case 'INFOSMS':
+            case '
+            SMS':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getSmsCounter&detail=0';
                 log::add('JPI', 'info', 'Commande INFOSMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
