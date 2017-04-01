@@ -1,42 +1,42 @@
-== Comment emettre un TTS ?
-Créer une commande comme ci-dessous.
+== Wie sendet man eine TTS ?
+Erstellen Sie einen Befehl wie unten.
 
-*Nb :* Les langues du device JPI sont détectées par requête.
+*Hinweis :* Die Sprachen des JPI Gerätes wird durch eine Abfrage festgestellt.
 
 image::../images/TTS.png[]
 
 
-Ensuite associer cette commande dans un scénario.
+Dann verknüpfen Sie diesen Befehl mit einem Szenario.
 
-*Nb :* C'est à ce moment là qu'on peut activer ou non le Brodacast TTS.
+*Hinweis :* An dieser Stelle können wir das TTS Brodacast aktivieren oder deaktivieren.
 
 image::../images/Scénario_TTS.png[]
 
 
 
-== Comment envoyer un SMS ?
-Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
+== Wie sendet man eine SMS ?
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 image::../images/SMS.png[]
 
 
 
-== Comment appeler quelqu'un ?
-Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
+== Wie ruft man jemand an ?
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 image::../images/CALL.png[]
 
 
 
-== Comment jouer un fichier audio ?
-Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
+== Wie spielt man eine Audiodatei ab ?
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 image::../images/MEDIA.png[]
 
 
 
-== Comment jouer prendre une photo ?
-Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
+== Comment prendre une photo ?
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 *Nb :* Il faut recopier la résolution depuis l'application JPI
 
@@ -44,7 +44,7 @@ image::../images/PICTURE.png[]
 
 
 
-== Comment régler le volume de du device JPI ?
-Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
+== Comment régler le volume du device JPI ?
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 image::../images/VOLUME.png[]

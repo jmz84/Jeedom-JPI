@@ -126,6 +126,8 @@ function addCmdToTable(_cmd) {
     tr += '<option value="GEARREBOOT">{{Moteur - Reboot}}</option>';
     tr += '<option value="NOKEY">{{----------------------------------------}}</option>';
     tr += '<option value="SYSREBOOT">{{Système - Reboot}}</option>';
+    tr += '<option value="SCREENON">{{Système - ScreenOn}}</option>';
+    tr += '<option value="SCREENOFF">{{Système - ScreenOff}}</option>';
     tr += '<option value="NOKEY">{{----------------------------------------}}</option>';
     tr += '<option value="CALL">{{Téléphonie - Appel}}</option>';
     tr += '<option value="SMS">{{Téléphonie - SMS}}</option>';

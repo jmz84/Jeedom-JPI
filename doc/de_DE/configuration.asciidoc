@@ -1,17 +1,17 @@
-= Onglet équipement
+= Registerkarte Geräte
 
-** *Adresse IP :* adresse IP de l'équipement JPI
-** *Port :* port de connexon de l'équipement JPI
+** *IP Adresse :* die IP-Adresse des JPI Gerätes
+** *Port :* Verbindungs Port des JPI Gerätes
 
 image::../images/Equipement.png[]
 
-= Onglet équipement
+= Registerkarte Geräte
 
-Aucune commande n'est créé automatiquement, il faut donc, en fonction des besoins, créer les commandes à l'aide du boutons *Ajouter une commande JPI* qui se situe en haut à droite de l'écran.
+Kein Befehl wird automatisch erstellt, es ist daher notwendig, je nach den Bedürfnissen, die Befehle mit der Schaltfläche *JPI-Befehl hinzufügen*, die an der oberen rechten Ecke des Bildschirms ist, zu erstellen.
 
-** *Partie n°1 :* Nom de la commande
-** *Partie n°2 :* Menu déroulant pour choir une fonction JPI
-** *Partie n°3 :* champ dynamique qui change en fonction de la commande choisie (paramètre 1 : langue, caméra, volume ou numéro de téléphone, etc.)
-** *Partie n°4 :* champ dynamique qui change en fonction de la commande choisie (paramètre 2 : résolution caméra, média, etc.)
+** *Teil 1 :* Befehlsname 
+** *Teil 2 :* Dropdown-Menü zum auswählen einer JPI Funktion
+** *Teil 3 :* dynamisches Feld, das sich entsprechend der ausgewählten Befehle (1 Parameter : Sprache, Kamera, Lautstärke oder Telefonnummer, etc.) ändert
+** *Teil 4 :* dynamisches Feld, das sich entsprechend der ausgewählten Befehle (2 Parameter : Kameraauflösung, Medien, etc.) ändert
 
 image::../images/Commandes.png[]

@@ -29,7 +29,7 @@ class JPI extends eqLogic
         $url     = 'http://' . $ip . ':' . $port . '/?action=getVoices';
         $content = file_get_contents($url);
         $value   = explode(', ', $content);
-        log::add('JPI', 'debug', 'Langue(s) découverte(s) : ' . $content);
+        log::add('JPI', 'info', 'Langue(s) découverte(s) : ' . $content);
         return $value;
     }
     
@@ -152,7 +152,7 @@ class JPICmd extends cmd
             
             case 'TTS':
                 
-                if (($_options['title']) == 'Désactivé' || ($_options['title']) == 'désactivé') {
+                if (($_options['title']) == 'Désactivé' || ($_options['title']) == 'désactivé' || ($_options['title']) == '') {
                     $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . $this->getConfiguration('jpiVolume') . '&voice=' . $this->getConfiguration('jpiVoice') . '&queue=1&wait=1';
                     log::add('JPI', 'info', 'Commande TTS envoyée au périphérique JPI : ' . $url);
                     $request_http = new com_http($url);
@@ -166,7 +166,9 @@ class JPICmd extends cmd
                         $url  = 'http://' . $ip . ':' . $port . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . $this->getConfiguration('jpiVolume') . '&voice=' . $this->getConfiguration('jpiVoice') . '&queue=1&wait=1';
                         log::add('JPI', 'info', 'Commande TTS BROADCAST envoyée au périphérique JPI : ' . $url);
                         $request_http = new com_http($url);
-                        $request_http->exec(10, 1);
+ 						$request_http->setNoReportError(true);                                           
+                        $request_http->exec(0.1,1);
+                      
                         
                     }
                     break;
@@ -303,7 +305,8 @@ class JPICmd extends cmd
                 $request_http->exec(10);
                 break;
             
-            case 'INFOSMS':
+            case '
+            SMS':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getSmsCounter&detail=0';
                 log::add('JPI', 'info', 'Commande INFOSMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
@@ -351,6 +354,20 @@ class JPICmd extends cmd
                 $request_http = new com_http($url);
                 $request_http->exec(10);
                 break;
+            
+            case 'SCREENON':
+                $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=screenOn';
+                log::add('JPI', 'info', 'Commande SCREENON envoyée au périphérique JPI : ' . $url);
+                $request_http = new com_http($url);
+                $request_http->exec(10);
+                break;
+            
+            case 'SCREENOFF':
+                $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=screenOff';
+                log::add('JPI', 'info', 'Commande SCREENOFF envoyée au périphérique JPI : ' . $url);
+                $request_http = new com_http($url);
+                $request_http->exec(10);
+                break;                
         }
     }
     

@@ -1,19 +1,19 @@
 :icons:
 = Plugin Jeedom Paw Interface
 
-=== Description
+=== Beschreibung
 
-Plugin pour le pilotage de l'application android Jeedom Paw Interface.
+Plugin zum steuern der Android-App Jeedom Paw Interface.
 
-=== Présentation
+=== Präsentation
 include::presentation.asciidoc[]
 
 '''
-=== Configuration
+=== Konfiguration
 include::configuration.asciidoc[]
 
 '''
-=== Cas d’utilisation
+=== Anwendungsfall
 include::utilisation.asciidoc[]
 
 '''

@@ -35,7 +35,7 @@ image::../images/MEDIA.png[]
 
 
 
-== Comment jouer prendre une photo ?
+== Comment prendre une photo ?
 Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
 
 *Nb :* Il faut recopier la résolution depuis l'application JPI
@@ -44,7 +44,7 @@ image::../images/PICTURE.png[]
 
 
 
-== Comment régler le volume de du device JPI ?
+== Comment régler le volume du device JPI ?
 Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
 
 image::../images/VOLUME.png[]

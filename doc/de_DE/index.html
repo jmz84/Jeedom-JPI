@@ -416,26 +416,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
 <ul class="sectlevel2">
-<li><a href="#_description">1. Description</a></li>
-<li><a href="#_présentation">2. Présentation</a></li>
-<li><a href="#_configuration">3. Configuration</a></li>
-<li><a href="#_onglet_équipement">Onglet équipement</a></li>
-<li><a href="#_onglet_équipement_2">Onglet équipement</a>
+<li><a href="#_beschreibung">1. Beschreibung</a></li>
+<li><a href="#_präsentation">2. Präsentation</a></li>
+<li><a href="#_konfiguration">3. Konfiguration</a></li>
+<li><a href="#_registerkarte_geräte">Registerkarte Geräte</a></li>
+<li><a href="#_registerkarte_geräte_2">Registerkarte Geräte</a>
 <ul class="sectlevel2">
-<li><a href="#_cas_d_utilisation">1.1. Cas d’utilisation</a></li>
-<li><a href="#_comment_emettre_un_tts">2. Comment emettre un TTS ?</a></li>
-<li><a href="#_comment_envoyer_un_sms">3. Comment envoyer un SMS ?</a></li>
-<li><a href="#_comment_appeler_quelqu_un">4. Comment appeler quelqu&#8217;un ?</a></li>
-<li><a href="#_comment_jouer_un_fichier_audio">5. Comment jouer un fichier audio ?</a></li>
-<li><a href="#_comment_jouer_prendre_une_photo">6. Comment jouer prendre une photo ?</a></li>
-<li><a href="#_comment_régler_le_volume_de_du_device_jpi">7. Comment régler le volume de du device JPI ?</a>
+<li><a href="#_anwendungsfall">1.1. Anwendungsfall</a></li>
+<li><a href="#_wie_sendet_man_eine_tts">2. Wie sendet man eine TTS ?</a></li>
+<li><a href="#_wie_sendet_man_eine_sms">3. Wie sendet man eine SMS ?</a></li>
+<li><a href="#_wie_ruft_man_jemand_an">4. Wie ruft man jemand an ?</a></li>
+<li><a href="#_wie_spielt_man_eine_audiodatei_ab">5. Wie spielt man eine Audiodatei ab ?</a></li>
+<li><a href="#_comment_prendre_une_photo">6. Comment prendre une photo ?</a></li>
+<li><a href="#_comment_régler_le_volume_du_device_jpi">7. Comment régler le volume du device JPI ?</a>
 <ul class="sectlevel2">
 <li><a href="#_faq">7.1. FAQ</a>
 <ul class="sectlevel4">
 <li><a href="#_pourquoi_est_ce_que_j_ai_eu_une_roue_crantée_lors_de_l_édition_d_un_device_jpi">Pourquoi est-ce que j&#8217;ai eu une roue crantée lors de l&#8217;édition d&#8217;un device JPI  ?</a></li>
-<li><a href="#_pourquoi_le_plugin_ne_detecte_aucune_langue">Pourquoi le plugin ne detecte aucune langue  ?</a></li>
-<li><a href="#_est_ce_que_le_plugin_est_compatible_https">Est-ce que le plugin est compatible HTTPS ?</a></li>
-<li><a href="#_pourquoi_le_tts_ne_fonctionne_pas">Pourquoi le TTS ne fonctionne pas ?</a></li>
+<li><a href="#_warum_erkennt_das_plugin_keine_sprache">Warum erkennt das Plugin keine Sprache ?</a></li>
+<li><a href="#_ist_das_plugin_ist_https_kompatibel">Ist das Plugin ist HTTPS kompatibel ?</a></li>
+<li><a href="#_warum_funktioniert_tts_nicht">Warum funktioniert TTS nicht ?</a></li>
 <li><a href="#_comment_contrôler_les_requêtes_envoyées_au_x_périphérique_s_jpi">Comment contrôler les requêtes envoyées au(x) périphérique(s) JPI ?</a></li>
 </ul>
 </li>
@@ -449,74 +449,74 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect2">
-<h3 id="_description">1. Description</h3>
+<h3 id="_beschreibung">1. Beschreibung</h3>
 <div class="paragraph">
-<p>Plugin pour le pilotage de l&#8217;application android Jeedom Paw Interface.</p>
+<p>Plugin zum steuern der Android-App Jeedom Paw Interface.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_présentation">2. Présentation</h3>
+<h3 id="_präsentation">2. Präsentation</h3>
 <div class="paragraph">
-<p>Ce plugin permet d&#8217;utiliser facilement l&#8217;application android <strong>JPI</strong>. Il permet d&#8217;utiliser les fonctions suivantes :</p>
+<p>Dieses Plugin ermöglicht es Ihnen problemlos die *JPI * Android-App zu verwenden. Sie können die folgenden Funktionen nutzen :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Catégorie fonction
-- Notification
+<pre>Kategorie Funktion
+- Benachrichtigung
 - Toast
 
-Catégorie média
+Kategorie Medien
 - Flash
-- Mute
-- Next
+- Stumm
+- Nächste
 - Pause
-- Play
+- Spielen
 - Photo
 - Stop
 - TTS
 - Unmute
-- Volume
+- Lautstärke
 - Vibration
 
-Catégorie moteur
-- Arrêt
-- Redémarrage
+Kategorie Motor
+-stoppen
+- Neustarten
 
-Catégorie système
-- Redémarrage
+Kategorie System
+- Neustarten
 
-Catégorie téléphonie
+Kategorie Telefon
 - SMS
-- Appel</pre>
+- Anruf</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Petits plus du plugin :</p>
+<p>Plugin Extras :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Il sera compatible avec la fonction ASK. Il sera donc possible de recevoir des questions de votre Jeedom par SMS et d&#8217;y répondre !</p>
+<p>Es wird mit der ASK-Funktion kompatibel sein. Es wird möglich sein, Fragen von Ihrem Jeedom per SMS zu erhalten und zu reagieren !</p>
 </li>
 <li>
-<p>Une fonction "Broadcast TTS" qui sert à diffuser un message ou une annonce sur l&#8217;ensemble des périphériques JPI</p>
+<p>Eine "TTS Broadcast" Funktion, die verwendet wird, eine Nachricht oder Werbung auf allen JPI Geräten zu übertragen.</p>
 </li>
 </ul>
 </div>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_configuration">3. Configuration</h3>
+<h3 id="_konfiguration">3. Konfiguration</h3>
 
 </div>
-<h1 id="_onglet_équipement" class="sect0">Onglet équipement</h1>
+<h1 id="_registerkarte_geräte" class="sect0">Registerkarte Geräte</h1>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Adresse IP :</strong> adresse IP de l&#8217;équipement JPI</p>
+<p><strong>IP Adresse :</strong> die IP-Adresse des JPI Gerätes</p>
 </li>
 <li>
-<p><strong>Port :</strong> port de connexon de l&#8217;équipement JPI</p>
+<p><strong>Port :</strong> Verbindungs Port des JPI Gerätes</p>
 </li>
 </ul>
 </div>
@@ -525,23 +525,23 @@ Catégorie téléphonie
 <img src="../images/Equipement.png" alt="Equipement">
 </div>
 </div>
-<h1 id="_onglet_équipement_2" class="sect0">Onglet équipement</h1>
+<h1 id="_registerkarte_geräte_2" class="sect0">Registerkarte Geräte</h1>
 <div class="paragraph">
-<p>Aucune commande n&#8217;est créé automatiquement, il faut donc, en fonction des besoins, créer les commandes à l&#8217;aide du boutons <strong>Ajouter une commande JPI</strong> qui se situe en haut à droite de l&#8217;écran.</p>
+<p>Kein Befehl wird automatisch erstellt, es ist daher notwendig, je nach den Bedürfnissen, die Befehle mit der Schaltfläche <strong>JPI-Befehl hinzufügen</strong>, die an der oberen rechten Ecke des Bildschirms ist, zu erstellen.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Partie n°1 :</strong> Nom de la commande</p>
+<p><strong>Teil 1 :</strong> Befehlsname</p>
 </li>
 <li>
-<p><strong>Partie n°2 :</strong> Menu déroulant pour choir une fonction JPI</p>
+<p><strong>Teil 2 :</strong> Dropdown-Menü zum auswählen einer JPI Funktion</p>
 </li>
 <li>
-<p><strong>Partie n°3 :</strong> champ dynamique qui change en fonction de la commande choisie (paramètre 1 : langue, caméra, volume ou numéro de téléphone, etc.)</p>
+<p><strong>Teil 3 :</strong> dynamisches Feld, das sich entsprechend der ausgewählten Befehle (1 Parameter : Sprache, Kamera, Lautstärke oder Telefonnummer, etc.) ändert</p>
 </li>
 <li>
-<p><strong>Partie n°4 :</strong> champ dynamique qui change en fonction de la commande choisie (paramètre 2 : résolution caméra, média, etc.)</p>
+<p><strong>Teil 4 :</strong> dynamisches Feld, das sich entsprechend der ausgewählten Befehle (2 Parameter : Kameraauflösung, Medien, etc.) ändert</p>
 </li>
 </ul>
 </div>
@@ -552,17 +552,17 @@ Catégorie téléphonie
 </div>
 <hr>
 <div class="sect2">
-<h3 id="_cas_d_utilisation">1.1. Cas d’utilisation</h3>
+<h3 id="_anwendungsfall">1.1. Anwendungsfall</h3>
 
 </div>
 <div class="sect1">
-<h2 id="_comment_emettre_un_tts">2. Comment emettre un TTS ?</h2>
+<h2 id="_wie_sendet_man_eine_tts">2. Wie sendet man eine TTS ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous.</p>
+<p>Erstellen Sie einen Befehl wie unten.</p>
 </div>
 <div class="paragraph">
-<p><strong>Nb :</strong> Les langues du device JPI sont détectées par requête.</p>
+<p><strong>Hinweis :</strong> Die Sprachen des JPI Gerätes wird durch eine Abfrage festgestellt.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -570,10 +570,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="paragraph">
-<p>Ensuite associer cette commande dans un scénario.</p>
+<p>Dann verknüpfen Sie diesen Befehl mit einem Szenario.</p>
 </div>
 <div class="paragraph">
-<p><strong>Nb :</strong> C&#8217;est à ce moment là qu&#8217;on peut activer ou non le Brodacast TTS.</p>
+<p><strong>Hinweis :</strong> An dieser Stelle können wir das TTS Brodacast aktivieren oder deaktivieren.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -583,10 +583,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comment_envoyer_un_sms">3. Comment envoyer un SMS ?</h2>
+<h2 id="_wie_sendet_man_eine_sms">3. Wie sendet man eine SMS ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous et ensuite l&#8217;associer dans un scénario.</p>
+<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -596,10 +596,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comment_appeler_quelqu_un">4. Comment appeler quelqu&#8217;un ?</h2>
+<h2 id="_wie_ruft_man_jemand_an">4. Wie ruft man jemand an ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous et ensuite l&#8217;associer dans un scénario.</p>
+<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -609,10 +609,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comment_jouer_un_fichier_audio">5. Comment jouer un fichier audio ?</h2>
+<h2 id="_wie_spielt_man_eine_audiodatei_ab">5. Wie spielt man eine Audiodatei ab ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous et ensuite l&#8217;associer dans un scénario.</p>
+<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -622,10 +622,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comment_jouer_prendre_une_photo">6. Comment jouer prendre une photo ?</h2>
+<h2 id="_comment_prendre_une_photo">6. Comment prendre une photo ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous et ensuite l&#8217;associer dans un scénario.</p>
+<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="paragraph">
 <p><strong>Nb :</strong> Il faut recopier la résolution depuis l&#8217;application JPI</p>
@@ -638,10 +638,10 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect1">
-<h2 id="_comment_régler_le_volume_de_du_device_jpi">7. Comment régler le volume de du device JPI ?</h2>
+<h2 id="_comment_régler_le_volume_du_device_jpi">7. Comment régler le volume du device JPI ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Créer une commande comme ci-dessous et ensuite l&#8217;associer dans un scénario.</p>
+<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -658,19 +658,19 @@ Catégorie téléphonie
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pourquoi_le_plugin_ne_detecte_aucune_langue">Pourquoi le plugin ne detecte aucune langue  ?</h5>
+<h5 id="_warum_erkennt_das_plugin_keine_sprache">Warum erkennt das Plugin keine Sprache ?</h5>
 <div class="paragraph">
-<p>Il faut vérifier les informations de connexion (adresse/port).</p>
+<p>Sie müssen die Verbindungsdaten (Adresse/Port) überprüfen.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_est_ce_que_le_plugin_est_compatible_https">Est-ce que le plugin est compatible HTTPS ?</h5>
+<h5 id="_ist_das_plugin_ist_https_kompatibel">Ist das Plugin ist HTTPS kompatibel ?</h5>
 <div class="paragraph">
-<p>Non pas pour le moment.</p>
+<p>Nein, gegenwärtig noch nicht.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pourquoi_le_tts_ne_fonctionne_pas">Pourquoi le TTS ne fonctionne pas ?</h5>
+<h5 id="_warum_funktioniert_tts_nicht">Warum funktioniert TTS nicht ?</h5>
 <div class="paragraph">
 <p>Il faut bien renseigner le champ Broadcast [Activé/active] ou [Désactivé/désactivé]</p>
 </div>
@@ -688,27 +688,43 @@ Catégorie téléphonie
 <div class="ulist">
 <ul>
 <li>
-<p>Version 1.01 (version en cours)</p>
+<p>Version 1.02 (version en cours)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Correction des coquilles</p>
+<p>Ajout des commandes screenOn et screenOff</p>
 </li>
 <li>
-<p>Amélioration de l&#8217;utilisatin du broadcast TTS</p>
+<p>Amélioration de l&#8217;utilisation du broadcast TTS</p>
 </li>
 <li>
-<p>Création documentation</p>
+<p>Amélioration de la synchronisation du broadcast TTS</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Version 1.0 (version market 2017-03-16 22:01:25)</p>
+<p>Version 1.01 (2017-03-20 13:28:38)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Plugin initial</p>
+<p>Fehler korrigiert</p>
+</li>
+<li>
+<p>Amélioration de l&#8217;utilisation du broadcast TTS</p>
+</li>
+<li>
+<p>Dokumentation erstellt</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 1.0 (Markt Version 2017-03-16 22:01:25)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Erste Plugin Version</p>
 </li>
 </ul>
 </div>

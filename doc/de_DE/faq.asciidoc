@@ -2,15 +2,15 @@
 Le plugin fait une requete sur le device JPI pour récupérer les langues installées. Cela génère une roue crantée pendant quelques secondes, mais n'affecte en rien les performances de votre jeedom.
 
 
-===== Pourquoi le plugin ne detecte aucune langue  ?
-Il faut vérifier les informations de connexion (adresse/port).
+===== Warum erkennt das Plugin keine Sprache ?
+Sie müssen die Verbindungsdaten (Adresse/Port) überprüfen.
 
 
-===== Est-ce que le plugin est compatible HTTPS ?
-Non pas pour le moment.
+===== Ist das Plugin ist HTTPS kompatibel ?
+Nein, gegenwärtig noch nicht.
 
 
-===== Pourquoi le TTS ne fonctionne pas ?
+===== Warum funktioniert TTS nicht ?
 Il faut bien renseigner le champ Broadcast [Activé/active] ou [Désactivé/désactivé]
 
 

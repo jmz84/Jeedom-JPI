@@ -1,6 +1,11 @@
-* Version 1.01 (version en cours)
+* Version 1.02 (version en cours)
+** Ajout des commandes screenOn et screenOff
+** Amélioration de l'utilisation du broadcast TTS
+** Amélioration de la synchronisation du broadcast TTS
+
+* Version 1.01 (2017-03-20 13:28:38)
 ** Correction des coquilles
-** Amélioration de l'utilisatin du broadcast TTS
+** Amélioration de l'utilisation du broadcast TTS
 ** Création documentation
 
 * Version 1.0 (version market 2017-03-16 22:01:25)
