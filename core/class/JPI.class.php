@@ -157,7 +157,7 @@ class JPICmd extends cmd
                     log::add('JPI', 'info', 'Commande TTS envoyée au périphérique JPI : ' . $url);
                     $request_http = new com_http($url);
  					$request_http->setNoReportError(true);                                           
-                    $request_http->exec(2,1);
+                    $request_http->exec(1,1);
                     break;
                 } elseif (($_options['title']) == 'Activé' || ($_options['title']) == 'activé') {
                     $eqLogics = eqLogic::byType('JPI');
@@ -168,7 +168,7 @@ class JPICmd extends cmd
                         log::add('JPI', 'info', 'Commande TTS BROADCAST envoyée au périphérique JPI : ' . $url);
                         $request_http = new com_http($url);
  						$request_http->setNoReportError(true);                                           
-                        $request_http->exec(2,1);
+                        $request_http->exec(1,1);
                       
                         
                     }
@@ -192,7 +192,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande SMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'CALL':
@@ -200,7 +200,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande CALL envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'PICTURE':
@@ -208,7 +208,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande PICTURE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'APKCHECK':
@@ -216,7 +216,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande APKCHECK envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'APKMAJ':
@@ -224,7 +224,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande APKMAJ envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'SYSREBOOT':
@@ -232,14 +232,14 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande SYSREBOOT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'GEARREBOOT':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=restart';
                 log::add('JPI', 'info', 'Commande GEARREBOOT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+                $request_http->exec(1,1);
                 break;
             
             case 'GEARQUIT':
@@ -247,7 +247,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande GEARQUIT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'PLAY':
@@ -255,7 +255,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande PLAY envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'STOP':
@@ -263,7 +263,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande STOP envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'PAUSE':
@@ -271,7 +271,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande PAUSE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'NEXT':
@@ -279,7 +279,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande NEXT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'MUTE':
@@ -287,7 +287,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande MUTE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'UNMUTE':
@@ -295,7 +295,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande UNMUTE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'VOLUME':
@@ -303,7 +303,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande VOLUME envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'VERSION':
@@ -311,7 +311,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande VERSION envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'NOM':
@@ -319,7 +319,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande NOM envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'INFOSMS':
@@ -327,7 +327,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande INFOSMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'WIFI':
@@ -335,7 +335,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande WIFI envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'BATTERIE':
@@ -343,7 +343,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande BATTERIE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'VIBRATE':
@@ -351,7 +351,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande VIBRATE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'FLASH':
@@ -359,7 +359,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande FLASH envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'NOTIF':
@@ -367,7 +367,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande NOTIF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'TOAST':
@@ -375,7 +375,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande NOTIF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'SCREENON':
@@ -383,7 +383,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande SCREENON envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;
             
             case 'SCREENOFF':
@@ -391,7 +391,7 @@ class JPICmd extends cmd
                 log::add('JPI', 'info', 'Commande SCREENOFF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
  				$request_http->setNoReportError(true);                                           
-                $request_http->exec(2,1);
+                $request_http->exec(1,1);
                 break;                
         }
     }
