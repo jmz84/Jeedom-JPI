@@ -156,7 +156,8 @@ class JPICmd extends cmd
                     $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . $this->getConfiguration('jpiVolume') . '&voice=' . $this->getConfiguration('jpiVoice') . '&queue=1&wait=1';
                     log::add('JPI', 'info', 'Commande TTS envoyée au périphérique JPI : ' . $url);
                     $request_http = new com_http($url);
-                    $request_http->exec(10, 1);
+ 					$request_http->setNoReportError(true);                                           
+                    $request_http->exec(2,1);
                     break;
                 } elseif (($_options['title']) == 'Activé' || ($_options['title']) == 'activé') {
                     $eqLogics = eqLogic::byType('JPI');
@@ -167,7 +168,7 @@ class JPICmd extends cmd
                         log::add('JPI', 'info', 'Commande TTS BROADCAST envoyée au périphérique JPI : ' . $url);
                         $request_http = new com_http($url);
  						$request_http->setNoReportError(true);                                           
-                        $request_http->exec(0.1,1);
+                        $request_http->exec(2,1);
                       
                         
                     }
@@ -190,42 +191,48 @@ class JPICmd extends cmd
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=sendSms&number=' . $this->getConfiguration('jpiNumsms') . '&message=' . urlencode($message);
                 log::add('JPI', 'info', 'Commande SMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'CALL':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=makeCall&number=' . $this->getConfiguration('jpiNumsms');
                 log::add('JPI', 'info', 'Commande CALL envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'PICTURE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=picture&camera=' . $this->getConfiguration('jpiPicture') . '&resolution=' . $this->getConfiguration('jpiResolution');
                 log::add('JPI', 'info', 'Commande PICTURE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'APKCHECK':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=checkMaj';
                 log::add('JPI', 'info', 'Commande APKCHECK envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'APKMAJ':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=forceMaj';
                 log::add('JPI', 'info', 'Commande APKMAJ envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'SYSREBOOT':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=reboot';
                 log::add('JPI', 'info', 'Commande SYSREBOOT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'GEARREBOOT':
@@ -239,134 +246,152 @@ class JPICmd extends cmd
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=quit';
                 log::add('JPI', 'info', 'Commande GEARQUIT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'PLAY':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=play&media=' . $this->getConfiguration('jpiMedia') . '&volume=' . $this->getConfiguration('jpiVolume') . '&queue=1&wait=1';
                 log::add('JPI', 'info', 'Commande PLAY envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'STOP':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=stop';
                 log::add('JPI', 'info', 'Commande STOP envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'PAUSE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=pause';
                 log::add('JPI', 'info', 'Commande PAUSE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'NEXT':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=next';
                 log::add('JPI', 'info', 'Commande NEXT envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'MUTE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=muteAll';
                 log::add('JPI', 'info', 'Commande MUTE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'UNMUTE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=unmuteAll';
                 log::add('JPI', 'info', 'Commande UNMUTE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'VOLUME':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=setVolume&volume=' . $this->getConfiguration('jpiVolume') . '&stream=' . $this->getConfiguration('jpiStream');
                 log::add('JPI', 'info', 'Commande VOLUME envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'VERSION':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getVersion';
                 log::add('JPI', 'info', 'Commande VERSION envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'NOM':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getDeviceName';
                 log::add('JPI', 'info', 'Commande NOM envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
-            case '
-            SMS':
+            case 'INFOSMS':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getSmsCounter&detail=0';
                 log::add('JPI', 'info', 'Commande INFOSMS envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'WIFI':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getWifiStrength';
                 log::add('JPI', 'info', 'Commande WIFI envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'BATTERIE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=getBattLevel';
                 log::add('JPI', 'info', 'Commande BATTERIE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'VIBRATE':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=vibration';
                 log::add('JPI', 'info', 'Commande VIBRATE envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'FLASH':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=animFlash';
                 log::add('JPI', 'info', 'Commande FLASH envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'NOTIF':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=notification&header=' . urlencode($_options['title']) . '&message=' . urlencode($_options['message']);
                 log::add('JPI', 'info', 'Commande NOTIF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'TOAST':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=toast&message=' . urlencode($_options['message']);
                 log::add('JPI', 'info', 'Commande NOTIF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'SCREENON':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=screenOn';
                 log::add('JPI', 'info', 'Commande SCREENON envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;
             
             case 'SCREENOFF':
                 $url = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '?action=screenOff';
                 log::add('JPI', 'info', 'Commande SCREENOFF envoyée au périphérique JPI : ' . $url);
                 $request_http = new com_http($url);
-                $request_http->exec(10);
+ 				$request_http->setNoReportError(true);                                           
+                $request_http->exec(2,1);
                 break;                
         }
     }
