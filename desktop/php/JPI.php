@@ -103,7 +103,12 @@ foreach (object::all() as $object) {
         <label class="col-sm-2 control-label">{{Port}}</label>
         <div class="col-sm-2">
           <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPort" />
-        </div>          
+        </div> 
+        </div> 
+       <br>
+	   <br>
+       <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');?>}}
+       </div>            
        </fieldset>
      </form>
    </div>
