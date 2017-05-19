@@ -16,7 +16,18 @@ $eqLogics = eqLogic::byType($plugin->getId());
         <?php
 foreach ($eqLogics as $eqLogic) {
     $opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
-    echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
+    echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanNa
+1
+
+ <?php
+
+2
+
+if (!isConnect('admin')) {
+
+3
+
+    throw new Exception('{{401 - Accès non autorisé}}');me(true) . '</a></li>';
 }
 ?>
  </ul>
@@ -155,12 +166,13 @@ foreach (object::all() as $object) {
 </div> 
 
    </div>
-      </div>
+
            <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php
 echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');
 ?>}}
            </div>    
-
+      </div>
+   
    <div role="tabpanel" class="tab-pane" id="commandtab">
      <a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Ajouter une commande JPI}}</a><br/><br/>
      <table id="table_cmd" class="table table-bordered table-condensed">
