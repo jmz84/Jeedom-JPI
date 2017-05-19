@@ -19,7 +19,7 @@ foreach ($eqLogics as $eqLogic) {
     echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
 }
 ?>
-  </ul>
+ </ul>
    </div>
  </div>
 
@@ -92,7 +92,7 @@ foreach (object::all() as $object) {
     echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
 }
 ?>
-          </select>
+         </select>
            </div>
             </div>
                <div class="form-group">
@@ -139,7 +139,6 @@ foreach (object::all() as $object) {
     
     
     
-    
 <div class="col-sm-5">
 <form class="form-horizontal">
 <fieldset>
@@ -149,48 +148,19 @@ foreach (object::all() as $object) {
 </center>
 <span style="font-size : 1.1em;position:relative;word-break: break-all;white-space: pre-wrap;word-wrap: break-word"><center>{{Lien vers équipement JPI}}</center></span>      
 </div>
-        
-        
+
         
     </fieldset>
 </form>
 </div> 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
    </div>
       </div>
-      
+           <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php
+echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');
+?>}}
+           </div>    
 
-
-
-
-
-
-      
-      
-      
-      
-      
    <div role="tabpanel" class="tab-pane" id="commandtab">
      <a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Ajouter une commande JPI}}</a><br/><br/>
      <table id="table_cmd" class="table table-bordered table-condensed">
@@ -219,4 +189,4 @@ include_file('desktop', 'JPI', 'js', 'JPI');
 ?>
 <?php
 include_file('core', 'plugin.template', 'js');
-?> 	
+?>    
