@@ -16,4 +16,4 @@ Il faut bien renseigner le champ Broadcast [Activé/active] ou [Désactivé/dés
 
 
 ===== Comment contrôler les requêtes envoyées au(x) périphérique(s) JPI ?
-Il faut configuré la journalisation du plugin sur INFO et les logs seront contenus dans le journal JPI.
+Il faut configurer la journalisation du plugin sur INFO et les logs seront contenus dans le journal JPI.
