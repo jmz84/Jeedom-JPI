@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /* This file is part of Jeedom.
  *
@@ -34,7 +34,7 @@ if (init('reponse') != '') {
             throw new Exception(__('Vous n\'etes pas autorisé à effectuer cette action', __FILE__));
         } else {
             $reponse = init('reponse');
-            log::add('JPI', 'debug', $reponse);
+            log::add('JPI', 'info', 'Réponse Ask : ' . $reponse);
             
             $eqLogics = eqLogic::byType('jpi');
             foreach ($eqLogics as $eqLogic) {
@@ -62,4 +62,4 @@ if (init('reponse') != '') {
         log::add('JPI', 'error', $e->getMessage());
     }
     die();
-}
+} 
