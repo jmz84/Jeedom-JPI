@@ -61,3 +61,9 @@ puis créer un scénario sur l'interface JPI comme ci-desous :
 
 
 image::../images/ScenarioJPIask.png[]
+
+== Comment s'assurer que la commande d'envoi SMS a bien réussie ?
+Dans un scénario, il faut utiliser la commande info "statut SMS"  comme déclencheur.
+Voici un exemple 
+
+image::../images/testsms.png[]
