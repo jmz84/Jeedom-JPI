@@ -55,7 +55,7 @@ Votre appacation android JPI doit être en version 0.901
 Créer un scénario sur l'interface jeedom comme ci-desous :
 
 
-image::../images/ScenarioJeedomask.png[]
+image::../images/Jeedomask.png[]
 
 puis créer un scénario sur l'interface JPI comme ci-desous :
 
