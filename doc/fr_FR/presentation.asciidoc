@@ -13,6 +13,7 @@ Catégorie système : Niveau de luminosité, Lancer une application, Fermer une 
 Catégorie téléphonie : SMS, Appel, Reset compteur SMS
 
 Il dispose aussi d'un widget d'état et de contrôle de la partie multimédia avec 4 bouttons pré-définis
+
 image::../images/widget.png[]
 
 Petits plus du plugin :
