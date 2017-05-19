@@ -1,4 +1,4 @@
-<?php
+ <?php
 if (!isConnect('admin')) {
     throw new Exception('{{401 - Accès non autorisé}}');
 }
@@ -19,7 +19,7 @@ foreach ($eqLogics as $eqLogic) {
     echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
 }
 ?>
-    </ul>
+ </ul>
    </div>
  </div>
 
@@ -64,25 +64,27 @@ foreach ($eqLogics as $eqLogic) {
   <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
     <div role="tabpanel" class="tab-pane active" id="eqlogictab">
       <br/>
+        <div class="row">
+            <div class="col-sm-7">      
       <form class="form-horizontal">
         <fieldset>
           <div class="form-group">
-            <label class="col-sm-2 control-label">{{Nom de l'équipement JPI}}</label>
-            <div class="col-sm-3">
+            <label class="col-sm-4 control-label">{{Nom de l'équipement JPI}}</label>
+            <div class="col-sm-6">
               <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
               <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement JPI}}" />
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label"></label>
-            <div class="col-sm-9">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-6">
               <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
               <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label" >{{Objet parent}}</label>
-            <div class="col-sm-3">
+            <label class="col-sm-4 control-label" >{{Objet parent}}</label>
+            <div class="col-sm-6">
               <select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
                 <option value="">{{Aucun}}</option>
                 <?php
@@ -90,38 +92,85 @@ foreach (object::all() as $object) {
     echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
 }
 ?>
-            </select>
+         </select>
            </div>
             </div>
                <div class="form-group">
-        <label class="col-sm-2 control-label">{{Adresse IP}}</label>
-      <div class="col-sm-2">
+        <label class="col-sm-4 control-label">{{Adresse IP}}</label>
+      <div class="col-sm-6">
          <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiIp" />
       </div>
     </div>
         <div class="form-group">
-        <label class="col-sm-2 control-label">{{Port}}</label>
-        <div class="col-sm-2">
+        <label class="col-sm-4 control-label">{{Port}}</label>
+        <div class="col-sm-6">
           <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPort" />
         </div> 
         </div> 
-       <br>
-	   <br>
-       <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');?>}}
-       </div>            
+    
+        <div class="form-group">
+        <label class="col-sm-4 control-label">{{Preset média 1}}</label>
+        <div class="col-sm-6">
+          <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPreset1" />
+        </div> 
+        </div> 
+        <div class="form-group">
+        <label class="col-sm-4 control-label">{{Preset média 2}}</label>
+        <div class="col-sm-6">
+          <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPreset2" />
+        </div> 
+        </div> 
+        <div class="form-group">
+        <label class="col-sm-4 control-label">{{Preset média 3}}</label>
+        <div class="col-sm-6">
+          <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPreset3" />
+        </div> 
+        </div> 
+        <div class="form-group">
+        <label class="col-sm-4 control-label">{{Preset média 4}}</label>
+        <div class="col-sm-6">
+          <input type="text" class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="jpiPreset4" />
+        </div> 
+        </div> 
+        
+      </div>
        </fieldset>
      </form>
+    
+    
+    
+<div class="col-sm-5">
+<form class="form-horizontal">
+<fieldset>
+<div class="cursor" id="bt_lms">
+<center>
+<i class="fa fa-mobile" style="font-size : 5em;color:#767676;"></i>
+</center>
+<span style="font-size : 1.1em;position:relative;word-break: break-all;white-space: pre-wrap;word-wrap: break-word"><center>{{Lien vers équipement JPI}}</center></span>      
+</div>
+
+        
+    </fieldset>
+</form>
+</div> 
+
    </div>
+      </div>
+           <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php
+echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');
+?>}}
+           </div>    
+
    <div role="tabpanel" class="tab-pane" id="commandtab">
      <a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Ajouter une commande JPI}}</a><br/><br/>
      <table id="table_cmd" class="table table-bordered table-condensed">
       <thead>
         <tr>
+          <th style="width: 115px;"></th>
           <th>{{Nom}}</th>
           <th>{{Action}}</th>
           <th>{{Paramètre 1}}</th>
           <th>{{Paramètre 2}}</th>
-          <th style="width: 120px;"></th>
         </tr>
       </thead>
       <tbody>
@@ -133,10 +182,11 @@ foreach (object::all() as $object) {
 
 </div>
 </div>
+</div>
 
 <?php
 include_file('desktop', 'JPI', 'js', 'JPI');
 ?>
 <?php
 include_file('core', 'plugin.template', 'js');
-?>
+?>    

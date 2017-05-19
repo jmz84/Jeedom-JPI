@@ -1,0 +1,111 @@
+<div class="eqLogic-widget eqLogic JPI" style="width: 285px;border:#border#;border-radius:#border-radius#;background-color: #background-color#;color: #color#;#style#;" data-eqLogic_id="#id#" data-eqLogic_uid="#uid#" data-version="dashboard" >
+<span class="statusCmd pull-right" style="position : absolute;left : 2px;z-index: 1030;"></span>
+<span class="spanvoice tooltips" style="position : absolute;bottom: 3px;right: 3px;cursor:pointer"><i class="fa fa-microphone" title="Reconnaissance vocale"></i></span>
+   <i class='fa fa-refresh pull-right cursor refresh' style="margin-top: 3px;margin-right: 3px;"></i>
+   <span class="cmd cmd-widget" data-cmd_id="#refresh_id#" style="display:none;"></span>
+    <center><a href="#eqLink#" style="font-size : 1.5em;"> #name# </a></center>
+
+<div class="row">
+    <div class="col-xs-5">
+        <center style="margin-top:5px">
+             <span class="spanversion" style="font-size : 1em;"><i class="fa fa-info-circle" title="Version APK"></i>&nbsp;#infoversion#</span><br>
+              <span class="spanbatterie" style="font-size : 1em;"><i class="fa fa-battery-full" title="Niveau batterie"></i>&nbsp;#infobatterie# %</span><br>
+            <span class="spansignal" style="font-size : 1em;"><i class="fa fa-wifi" title="Puissance Wifi"></i>&nbsp;#infosignal# %</span><br>
+              <span class="spansms" style="font-size : 1em;"><i class="fa fa-commenting" title="SMS envoyés"></i>&nbsp;#infosms#</span><br>
+              <span class="spanvolume" style="font-size : 1em;"><i class="fa fa-volume-off" title="Volume média"></i>&nbsp;#infovolume#</span>
+
+</center>
+    </div>
+        
+    <div class="col-xs-6">
+        <center style="margin-top:5px">
+            <a class="btn btn-sm btn-default mute tooltips" title="mute" style="background-color:#FFB732 !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-volume-off"></i></a>
+            <a class="btn btn-sm btn-default unmute tooltips" title="unmute" style="background-color:#FFB732 !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-volume-up"></i></a><br>
+             <div class="volumemedia" style="margin-top:5px;width:90%;"></div>
+  
+              <a class="btn btn-sm btn-default play tooltips" title="Play" style="background-color:#6FB76F !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-play"></i></a>
+            <a class="btn btn-sm btn-default pause tooltips" title="Pause" style="background-color:#ff4357 !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-pause"></i></a>
+            <a class="btn btn-sm btn-default stop tooltips" title="Arrêter" style="background-color:#ff4357 !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-stop"></i></a>
+            <a class="btn btn-sm btn-default next tooltips" title="Média suivant" style="background-color:#ff4357 !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-step-forward"></i></a><br>
+
+              <a class="btn btn-sm btn-default preset1 tooltips" title="Preset1" style="background-color:#6666ff !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-music"></i></a>
+            <a class="btn btn-sm btn-default preset2 tooltips" title="Preset2" style="background-color:#6666ff !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-music"></i></a>
+            <a class="btn btn-sm btn-default preset3 tooltips" title="Preset3" style="background-color:#6666ff !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-music"></i></a>
+            <a class="btn btn-sm btn-default preset4 tooltips" title="Preset4" style="background-color:#6666ff !important;border-color : transparent !important;margin-top:5px;"><i class="fa fa-music"></i></a>
+
+            <script>
+$(".JPI[data-eqLogic_uid=#uid#] .volumemedia").slider({
+    min: 1,
+    max: 100,
+    range: "min",
+    value: ('#infovolume#' == '') ? 5 : parseInt('#infovolume#')
+});
+$(".JPI[data-eqLogic_uid=#uid#] .slider.slider-horizontal").css('z-index',1);
+$(".JPI[data-eqLogic_uid=#uid#] .volumemedia").on('slidestop', function (event,ui) {
+    $(".JPI[data-eqLogic_uid=#uid#] .spanvolume").empty().append('<i class="fa fa-volume-off" style="font-size:1.1em" title="Volume"> ' + ui.value);
+    jeedom.cmd.execute({id: '#cmd_setvolumemedia_id#', value: {slider: ui.value}});
+    
+});
+$(".JPI[data-eqLogic_uid=#uid#] .ui-slider-handle").css('background','transparent');
+$(".JPI[data-eqLogic_uid=#uid#] .ui-slider-handle").css('border-color','transparent');
+$(".JPI[data-eqLogic_uid=#uid#] .ui-widget-content").css('background','#a6d2ff');
+$(".JPI[data-eqLogic_uid=#uid#] .volumemedia .ui-slider-handle").append('<i class="fa fa-volume-off" style="color:white;font-size:1.2em;margin-top:-5px;cursor:pointer" title="Volume"></i>');
+
+if ('#infosentsms#' == '0') {
+    $('.eqLogic[data-eqLogic_uid=#uid#] .spansms').css('color', '#ff9999');
+    $('.eqLogic[data-eqLogic_uid=#uid#] .spansms').attr("title","Sms non envoyé");
+}
+
+
+
+$('.eqLogic[data-eqLogic_uid=#uid#] .mute').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_mute_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .unmute').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_unmute_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .play').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_play_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .pause').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_pause_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .stop').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_stop_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .next').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_next_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .preset1').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_preset1_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .preset2').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_preset2_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .preset3').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_preset3_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .preset4').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_preset4_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .spanvoice').on('click', function() {
+    jeedom.cmd.execute({id: '#cmd_voice_id#'});
+});
+$('.eqLogic[data-eqLogic_uid=#uid#] .refresh').on('click', function () {
+    jeedom.cmd.execute({id: '#cmd_refresh_id#'});
+});
+            </script>
+          
+          
+        </center>
+    </div>
+              
+
+    </script>
+      </center>
+      
+      
+</div>                    
+</div>
+</div>
+</div>

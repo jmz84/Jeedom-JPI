@@ -1,0 +1,8 @@
+{
+	"id" : "JPI",
+	"name" : "JPI Plugin",
+	"licence" : "AGPL",
+	"author" : "Jerome MARTINEZ",
+	"require" : "2.4",
+	"category" : "devicecommunication"
+}

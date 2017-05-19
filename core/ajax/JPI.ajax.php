@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /* This file is part of Jeedom.
  *
@@ -19,20 +19,27 @@
 try {
     require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
     include_file('core', 'authentification', 'php');
-
+    
     if (!isConnect('admin')) {
         throw new Exception(__('401 - Accès non autorisé', __FILE__));
     }
-  
+    
     if (init('action') == 'getjpiVoice') {
-      $ip =(init('ip'));
-            $port =(init('port'));
-             ajax::success(JPI::getjpiVoice($ip,$port));
+        $ip   = (init('ip'));
+        $port = (init('port'));
+        ajax::success(JPI::getjpiVoice($ip, $port));
     }
-  
+    
+    if (init('action') == 'getjpiApp') {
+        $ip   = (init('ip'));
+        $port = (init('port'));
+        ajax::success(JPI::getjpiApp($ip, $port));
+    }
+    
     throw new Exception(__('Aucune méthode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     ajax::error(displayExeption($e), $e->getCode());
 }
-?>
+?> 

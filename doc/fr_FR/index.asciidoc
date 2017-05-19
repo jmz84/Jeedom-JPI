@@ -1,5 +1,5 @@
 :icons:
-= Plugin Jeedom Paw Interface
+= JPI plugin
 
 === Description
 
