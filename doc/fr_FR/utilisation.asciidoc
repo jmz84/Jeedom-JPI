@@ -1,4 +1,4 @@
-== Comment emettre un TTS ?
+== Comment émettre un TTS ?
 Créer une commande comme ci-dessous.
 
 *Nb :* Les langues du device JPI sont détectées par requête.
@@ -45,6 +45,18 @@ image::../images/PICTURE.png[]
 
 
 == Comment régler le volume du device JPI ?
+Tout d'abord votre application android doit être au minimum en v0.901 
 Créer une commande comme ci-dessous et ensuite l'associer dans un scénario.
 
 image::../images/VOLUME.png[]
+
+== Comment faire un scénario ASK ?
+Créer un scénario sur l'interface jeedom comme ci-desous :
+
+
+image::../images/ScenarioJeedomask.png[]
+
+et ensuite créer un scénario sur l'interface JPI comme ci-desous :
+
+
+image::../images/ScenarioJPIask.png[]
