@@ -62,6 +62,10 @@ puis créer un scénario sur l'interface JPI comme ci-desous :
 
 image::../images/ScenarioJPIask.png[]
 
+Il faut bien mettre les paramètres
+URL = http://IPDEVOTREJEEDOM/plugins/JPI/core/php/jeeJPI.php
+Parameters =  apikey=APIDEVOTREJEEDOM&reponse={MESSAGE}
+
 == Comment s'assurer que la commande d'envoi SMS a bien réussie ?
 Dans un scénario, il faut utiliser la commande info "statut SMS"  comme déclencheur.
 Voici un exemple 
