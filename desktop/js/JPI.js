@@ -164,9 +164,9 @@ function addCmdToTable(_cmd) {
     tr += '<option value="ANIMFLASH">{{Caméra - Flash}}</option>';    
     tr += '<option value="TAKEPICTURE">{{Caméra - Photo}}</option>';
     tr += '<option value="NOTIF">{{Fonction - Notification}}</option>';
-    tr += '<option value="GETVAR">{{Fonction - Lit une variable}}</option>';
-    tr += '<option value="SETVAR">{{Fonction - Définit une variable}}</option>';
-    tr += '<option value="UNSETVAR">{{Fonction - Efface une variable}}</option>';    
+    tr += '<option value="GETVAR">{{Fonction - Lire une variable}}</option>';
+    tr += '<option value="SETVAR">{{Fonction - Définir une variable}}</option>';
+    tr += '<option value="UNSETVAR">{{Fonction - Effacer une variable}}</option>';    
     tr += '<option value="TASKER">{{Fonction - Tâche tasker}}</option>';    
     tr += '<option value="TOAST">{{Fonction - Toast}}</option>';
     tr += '<option value="PLAY">{{Média - Play}}</option>';
