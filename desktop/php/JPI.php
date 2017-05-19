@@ -155,11 +155,12 @@ foreach (object::all() as $object) {
 </div> 
 
    </div>
-      </div>
+
            <div class="alert alert-info">{{URL de retour à ajouter dans les devices JPI pour la fonction ASK : <?php
 echo network::getNetworkAccess('internal') . '/plugins/JPI/core/php/jeeJPI.php?apikey=' . config::byKey('api');
 ?>}}
-           </div>    
+           </div> 
+           </div>
 
    <div role="tabpanel" class="tab-pane" id="commandtab">
      <a class="btn btn-success btn-sm cmdAction pull-right" data-action="add" style="margin-top:5px;"><i class="fa fa-plus-circle"></i> {{Ajouter une commande JPI}}</a><br/><br/>
