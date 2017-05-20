@@ -16,18 +16,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
         <?php
 foreach ($eqLogics as $eqLogic) {
     $opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
-    echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanNa
-1
-
- <?php
-
-2
-
-if (!isConnect('admin')) {
-
-3
-
-    throw new Exception('{{401 - Accès non autorisé}}');me(true) . '</a></li>';
+    echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
 }
 ?>
  </ul>
