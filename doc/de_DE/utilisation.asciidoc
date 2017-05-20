@@ -1,4 +1,4 @@
-== Wie sendet man eine TTS ?
+== Comment émettre un TTS ?
 Erstellen Sie einen Befehl wie unten.
 
 *Hinweis :* Die Sprachen des JPI Gerätes wird durch eine Abfrage festgestellt.
@@ -45,6 +45,27 @@ image::../images/PICTURE.png[]
 
 
 == Comment régler le volume du device JPI ?
+Tout d'abord votre application android doit être au minimum en v0.901 
 Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.
 
 image::../images/VOLUME.png[]
+
+== Comment faire un scénario ASK ?
+Votre appacation android JPI doit être en version 0.901
+Créer un scénario sur l'interface jeedom comme ci-desous :
+
+
+image::../images/Jeedomask.png[]
+
+puis créer un scénario sur l'interface JPI comme ci-desous :
+
+
+image::../images/ScenarioJPIask.png[]
+
+Il faut bien mettre les paramètres URL = http://IPDEVOTREJEEDOM/plugins/JPI/core/php/jeeJPI.php et Parameters = apikey=APIDEVOTREJEEDOM&reponse={MESSAGE}
+
+== Comment s'assurer que la commande d'envoi SMS a bien réussie ?
+Dans un scénario, il faut utiliser la commande info "statut SMS"  comme déclencheur.
+Voici un exemple 
+
+image::../images/testsms.png[]

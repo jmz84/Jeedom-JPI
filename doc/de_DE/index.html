@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3.dev">
-<title>Plugin Jeedom Paw Interface</title>
+<title>JPI plugin</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -412,7 +412,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Plugin Jeedom Paw Interface</h1>
+<h1>JPI plugin</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
 <ul class="sectlevel2">
@@ -423,14 +423,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_registerkarte_geräte_2">Registerkarte Geräte</a>
 <ul class="sectlevel2">
 <li><a href="#_anwendungsfall">1.1. Anwendungsfall</a></li>
-<li><a href="#_wie_sendet_man_eine_tts">2. Wie sendet man eine TTS ?</a></li>
+<li><a href="#_comment_émettre_un_tts">2. Comment émettre un TTS ?</a></li>
 <li><a href="#_wie_sendet_man_eine_sms">3. Wie sendet man eine SMS ?</a></li>
 <li><a href="#_wie_ruft_man_jemand_an">4. Wie ruft man jemand an ?</a></li>
 <li><a href="#_wie_spielt_man_eine_audiodatei_ab">5. Wie spielt man eine Audiodatei ab ?</a></li>
 <li><a href="#_comment_prendre_une_photo">6. Comment prendre une photo ?</a></li>
-<li><a href="#_comment_régler_le_volume_du_device_jpi">7. Comment régler le volume du device JPI ?</a>
+<li><a href="#_comment_régler_le_volume_du_device_jpi">7. Comment régler le volume du device JPI ?</a></li>
+<li><a href="#_comment_faire_un_scénario_ask">8. Comment faire un scénario ASK ?</a></li>
+<li><a href="#_comment_s_assurer_que_la_commande_d_envoi_sms_a_bien_réussie">9. Comment s&#8217;assurer que la commande d&#8217;envoi SMS a bien réussie ?</a>
 <ul class="sectlevel2">
-<li><a href="#_faq">7.1. FAQ</a>
+<li><a href="#_faq">9.1. FAQ</a>
 <ul class="sectlevel4">
 <li><a href="#_pourquoi_est_ce_que_j_ai_eu_une_roue_crantée_lors_de_l_édition_d_un_device_jpi">Pourquoi est-ce que j&#8217;ai eu une roue crantée lors de l&#8217;édition d&#8217;un device JPI  ?</a></li>
 <li><a href="#_warum_erkennt_das_plugin_keine_sprache">Warum erkennt das Plugin keine Sprache ?</a></li>
@@ -439,7 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_comment_contrôler_les_requêtes_envoyées_au_x_périphérique_s_jpi">Comment contrôler les requêtes envoyées au(x) périphérique(s) JPI ?</a></li>
 </ul>
 </li>
-<li><a href="#_changelog">7.2. Changelog</a></li>
+<li><a href="#_changelog">9.2. Changelog</a></li>
 </ul>
 </li>
 </ul>
@@ -457,37 +459,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_präsentation">2. Präsentation</h3>
 <div class="paragraph">
-<p>Dieses Plugin ermöglicht es Ihnen problemlos die *JPI * Android-App zu verwenden. Sie können die folgenden Funktionen nutzen :</p>
+<p>Ce plugin permet d&#8217;utiliser facilement l&#8217;application android <strong>JPI</strong>. Il est actuellement compatible avec la version 0.901 et permet d&#8217;utiliser les fonctions suivantes :</p>
 </div>
-<div class="listingblock">
+<div class="paragraph">
+<p>Catégorie fonction : Afficher un design, afficher accueil, afficher une page web, afficher une vue, application au premier plan, statut reconnaissance vocale</p>
+</div>
+<div class="paragraph">
+<p>Catégorie fonction : lire une variable, définir une variable, effacer une variable, tâche tasker, notification, toast</p>
+</div>
+<div class="paragraph">
+<p>Catégorie média : Flash, Mute, Next, Pause, Play, Photo, Stop, TTS, Unmute, Volume, Vibration</p>
+</div>
+<div class="paragraph">
+<p>Catégorie moteur : Arrêt, Ecrire dans le journal, Nettoyer les données, Redémarrage, Recharger la config, Vider un journal</p>
+</div>
+<div class="paragraph">
+<p>Catégorie système : Niveau de luminosité, Lancer une application, Fermer une application, Redémarrage, Reset le wifi, ScreenOn, ScreenOff</p>
+</div>
+<div class="paragraph">
+<p>Catégorie téléphonie : SMS, Appel, Reset compteur SMS</p>
+</div>
+<div class="paragraph">
+<p>Il dispose aussi d&#8217;un widget d&#8217;état et de contrôle de la partie multimédia avec 4 bouttons pré-définis</p>
+</div>
+<div class="imageblock">
 <div class="content">
-<pre>Kategorie Funktion
-- Benachrichtigung
-- Toast
-
-Kategorie Medien
-- Flash
-- Stumm
-- Nächste
-- Pause
-- Spielen
-- Photo
-- Stop
-- TTS
-- Unmute
-- Lautstärke
-- Vibration
-
-Kategorie Motor
--stoppen
-- Neustarten
-
-Kategorie System
-- Neustarten
-
-Kategorie Telefon
-- SMS
-- Anruf</pre>
+<img src="../images/widget.png" alt="widget">
 </div>
 </div>
 <div class="paragraph">
@@ -496,10 +493,10 @@ Kategorie Telefon
 <div class="ulist">
 <ul>
 <li>
-<p>Es wird mit der ASK-Funktion kompatibel sein. Es wird möglich sein, Fragen von Ihrem Jeedom per SMS zu erhalten und zu reagieren !</p>
+<p>Il est compatible avec la fonction ASK. Il est donc possible de recevoir des questions de votre Jeedom par SMS et d&#8217;y répondre !</p>
 </li>
 <li>
-<p>Eine "TTS Broadcast" Funktion, die verwendet wird, eine Nachricht oder Werbung auf allen JPI Geräten zu übertragen.</p>
+<p>Une fonction "Broadcast TTS" qui sert à diffuser un message ou une annonce sur l&#8217;ensemble des périphériques JPI</p>
 </li>
 </ul>
 </div>
@@ -556,7 +553,7 @@ Kategorie Telefon
 
 </div>
 <div class="sect1">
-<h2 id="_wie_sendet_man_eine_tts">2. Wie sendet man eine TTS ?</h2>
+<h2 id="_comment_émettre_un_tts">2. Comment émettre un TTS ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Erstellen Sie einen Befehl wie unten.</p>
@@ -641,16 +638,56 @@ Kategorie Telefon
 <h2 id="_comment_régler_le_volume_du_device_jpi">7. Comment régler le volume du device JPI ?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
+<p>Tout d&#8217;abord votre application android doit être au minimum en v0.901
+Erstellen Sie einen Befehl wie unten und verbinden ihn danach mit einem Szenario.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/VOLUME.png" alt="VOLUME">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_faire_un_scénario_ask">8. Comment faire un scénario ASK ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Votre appacation android JPI doit être en version 0.901
+Créer un scénario sur l&#8217;interface jeedom comme ci-desous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Jeedomask.png" alt="Jeedomask">
+</div>
+</div>
+<div class="paragraph">
+<p>puis créer un scénario sur l&#8217;interface JPI comme ci-desous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ScenarioJPIask.png" alt="ScenarioJPIask">
+</div>
+</div>
+<div class="paragraph">
+<p>Il faut bien mettre les paramètres URL = <a href="http://IPDEVOTREJEEDOM/plugins/JPI/core/php/jeeJPI.php" class="bare">http://IPDEVOTREJEEDOM/plugins/JPI/core/php/jeeJPI.php</a> et Parameters = apikey=APIDEVOTREJEEDOM&amp;reponse={MESSAGE}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_s_assurer_que_la_commande_d_envoi_sms_a_bien_réussie">9. Comment s&#8217;assurer que la commande d&#8217;envoi SMS a bien réussie ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dans un scénario, il faut utiliser la commande info "statut SMS"  comme déclencheur.
+Voici un exemple</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/testsms.png" alt="testsms">
+</div>
+</div>
 <hr>
 <div class="sect2">
-<h3 id="_faq">7.1. FAQ</h3>
+<h3 id="_faq">9.1. FAQ</h3>
 <div class="sect4">
 <h5 id="_pourquoi_est_ce_que_j_ai_eu_une_roue_crantée_lors_de_l_édition_d_un_device_jpi">Pourquoi est-ce que j&#8217;ai eu une roue crantée lors de l&#8217;édition d&#8217;un device JPI  ?</h5>
 <div class="paragraph">
@@ -678,17 +715,33 @@ Kategorie Telefon
 <div class="sect4">
 <h5 id="_comment_contrôler_les_requêtes_envoyées_au_x_périphérique_s_jpi">Comment contrôler les requêtes envoyées au(x) périphérique(s) JPI ?</h5>
 <div class="paragraph">
-<p>Il faut configuré la journalisation du plugin sur INFO et les logs seront contenus dans le journal JPI.</p>
+<p>Il faut configurer la journalisation du plugin sur INFO et les logs seront contenus dans le journal JPI.</p>
 </div>
 <hr>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_changelog">7.2. Changelog</h3>
+<h3 id="_changelog">9.2. Changelog</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Version 1.02 (version en cours)</p>
+<p>Version 1.03 (Version en cours sur le market)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout d&#8217;un widget</p>
+</li>
+<li>
+<p>Ajout de commandes JPI</p>
+</li>
+<li>
+<p>Amélioration du système de debug</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 1.02 (2017-04-19 20:42:08)</p>
 <div class="ulist">
 <ul>
 <li>

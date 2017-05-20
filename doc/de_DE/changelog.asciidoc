@@ -1,4 +1,9 @@
-* Version 1.02 (version en cours)
+* Version 1.03 (Version en cours sur le market)
+** Ajout d'un widget
+** Ajout de commandes JPI
+** Amélioration du système de debug
+
+* Version 1.02 (2017-04-19 20:42:08)
 ** Ajout des commandes screenOn et screenOff
 ** Amélioration de l'utilisation du broadcast TTS
 ** Amélioration de la synchronisation du broadcast TTS
