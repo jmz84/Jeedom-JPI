@@ -265,16 +265,16 @@ function addCmdToTable(_cmd) {
     tr += optionCmdForApp;
     tr += '</select>';
     tr += '</span>';
+    tr += '<span class="TTS modeOption" style="display : none;">';
+    tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="jpiVoice" style="display : inline-block;">';
+    tr += optionCmdForVoices;
+    tr += '</select>';
+    tr += '</span>';    
     tr += '</td>';
     
     
 
     tr += '<td>';
-    tr += '<span class="TTS modeOption" style="display : none;">';
-    tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="jpiVoice" style="display : inline-block;">';
-    tr += optionCmdForVoices;
-    tr += '</select>';
-    tr += '</span>';
     tr += '<span class="TAKEPICTURE modeOption">';
     tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="jpiResolution" placeholder="{{Résolution}}" >';
     tr += '</span>';
