@@ -402,7 +402,7 @@ class JPICmd extends cmd
         }
         
         if ($this->getConfiguration('jpiAction') == 'TTS') {
-            $this->setDisplay('title_placeholder', __('Broadcast [Activé,Désactivé]', __FILE__));
+            $this->setDisplay('title_placeholder', __('Volume', __FILE__));
         }
         if ($this->getConfiguration('jpiAction') == 'SMS') {
             $this->setDisplay('title_disable', 1);
@@ -590,24 +590,8 @@ class JPICmd extends cmd
             
             case 'TTS':
                 
-                if (($_options['title']) == 'Désactivé' || ($_options['title']) == 'désactivé' || ($_options['title']) == '') {
-                    $request = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . $this->getConfiguration('jpiVolume') . '&voice=' . $this->getConfiguration('jpiVoice') . '&queue=1&wait=1';
-                    $eqLogic->executerequest($request);
-                    break;
-                } elseif (($_options['title']) == 'Activé' || ($_options['title']) == 'activé') {
-                    $eqLogics = eqLogic::byType('JPI');
-                    foreach ($eqLogics as $jpidevice) {
-                        $ip      = $jpidevice->getConfiguration('jpiIp');
-                        $port    = $jpidevice->getConfiguration('jpiPort');
-                        $request = 'http://' . $ip . ':' . $port . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . $this->getConfiguration('jpiVolume') . '&voice=' . $this->getConfiguration('jpiVoice') . '&queue=1&wait=1';
-                        log::add('JPI', 'info', 'Commande TTS BROADCAST envoyée au périphérique JPI : ' . $request);
-                        $request_http = new com_http($request);
-                        $request_http->setNoReportError(true);
-                        $request_http->exec(0.1, 1);
-                        
-                    }
-                    break;
-                }
+            $request = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . ($_options['title']) . '&voice=' . $this->getConfiguration('jpiVoice');
+            $eqLogic->executerequest($request);
                 
                 break;
             
