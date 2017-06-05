@@ -588,11 +588,9 @@ class JPICmd extends cmd
             
             /********************************************MEDIA**************************************************************************************/
             
-            case 'TTS':
-                
-            $request = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . ($_options['title']) . '&voice=' . $this->getConfiguration('jpiVoice');
-            $eqLogic->executerequest($request);
-                
+            case 'TTS':             
+                $request = 'http://' . $eqLogic->getConfiguration('jpiIp') . ':' . $eqLogic->getConfiguration('jpiPort') . '/?action=tts&message=' . urlencode($_options['message']) . '&volume=' . ($_options['title']) . '&voice=' . $this->getConfiguration('jpiVoice');
+                $eqLogic->executerequest($request);
                 break;
             
             case 'PLAY':
