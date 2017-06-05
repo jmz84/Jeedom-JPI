@@ -215,7 +215,7 @@ function addCmdToTable(_cmd) {
     tr += '<span class="GOTOURL modeOption">';
     tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="jpiGotourl" placeholder="{{Adresse http}}" >';
     tr += '</span>';
-    tr += '<span class="TTS VOLUME PLAY modeOption">';
+    tr += '<span class="VOLUME PLAY modeOption">';
     tr += '<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="jpiVolume" placeholder="{{Volume}}" >';
     tr += '<option value="10">{{10}}</option>';
     tr += '<option value="20">{{20}}</option>';
