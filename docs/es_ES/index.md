@@ -24,7 +24,7 @@ Pour vous simplifier la tâche, vous pouvez utiliser les deux QR Code qui se tro
 - Le second sert à installer le serveur JPI.
 ![QRCode](../images/QRCode.png)
 
-Vous pouvez aussi vous aider du tuto de [blusy38](https://guillaumebraillon.fr/jeedom-installation-et-configuration-de-jeedom-paw-interface/)
+También puede encontrar ayuda con el tutorial de [La DomoPratique](https://www.ladomopratique.com/jeedom-installation-et-configuration-de-jeedom-paw-interface/)
 
 
 Configuration du plugin
